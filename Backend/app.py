@@ -12,8 +12,13 @@ load_dotenv()
 app = Flask(__name__)
 
 def askAI(question, image):
-    response = model.generate_content([f"{question}", image]).text
-    return response
+    try:
+        response = model.generate_content([f"{question}", image]).text
+    except Exception as e:
+        print(e)
+        print("Error On generation")
+        return "Error On generation" , 400 
+    return response 
 
 genai.configure(api_key=os.environ.get('GEMINI_API_KEY'))
 model = genai.GenerativeModel('gemini-pro-vision')
@@ -29,6 +34,7 @@ def home():
             image = Image.open(BytesIO(image_bytes))
             image.save("download.jpg")
             response = askAI(question, image)
+            return jsonify({"answer": response}), 200
         except Exception as e:
             print(f"Error saving image: {e}")
             return jsonify({"error": "Failed to save image"}), 400
