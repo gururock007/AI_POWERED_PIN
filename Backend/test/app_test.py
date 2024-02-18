@@ -20,10 +20,10 @@ def get_image(url):
 
 def get_mp3(url, text):
     load_dotenv()
+
     params = {'key': os.environ.get('VOICE_API_KEY'), 'src' : text,'hl' : 'en-us', 'c' : 'MP3', 'b64':'true'}
     try:
         response = requests.get(url=url, params=params)
-        print(os.environ.get('VOICE_API_KEY'))
 
         if response.content:
            with open("output.mp3", "wb") as f:
@@ -52,8 +52,8 @@ if image_data:
         if response.status_code == 200:
             try:
                 data = json.loads(response.text)
-                print("Server response:", data)
-                get_mp3(voice_url, response.text)
+                print("Server response:", data['answer'])
+                get_mp3(voice_url, data['answer'])
             except json.JSONDecodeError:
                 print("Error decoding server response")
         else:
