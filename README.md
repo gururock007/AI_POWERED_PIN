@@ -1,7 +1,3 @@
-Here is a sample README file for your project **AI Pin for the Blind**:
-
----
-
 # AI Pin for the Blind
 
 AI Pin for the Blind is a wearable solution designed to assist visually impaired individuals by providing real-time information about their surroundings using AI-driven image recognition. The system captures images periodically using an ESP32-CAM, processes them using the Gemini AI API for environment recognition, and converts the text information to speech for the user. Additionally, it uses face recognition to notify the user if any familiar faces are present.
@@ -83,7 +79,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 - **Gemini AI API** for image recognition.
 - **Voicessr API** for text-to-speech conversion.
 - **Face Recognition** Python package for face detection.
-
----
-
-Feel free to customize this README further as per your project's needs!
