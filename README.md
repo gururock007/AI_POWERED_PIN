@@ -16,10 +16,9 @@ AI Pin for the Blind is a wearable solution designed to assist visually impaired
 /AI_Pin_for_Blind
 │
 ├── backend/
-│   ├── app.py                # Main Flask application
-│   ├── blueprints/           # Flask blueprints for modularity
-│   ├── models/               # Data models and face recognition logic
-│   └── utils/                # Utility functions (API integrations, image processing, etc.)
+│   ├── init.py        # Main Flask application
+│   ├── api/           # Flask blueprints for modularity
+│   ├── test/               # Test all connections
 │
 ├── esp32-cam/
 │   └── index.ino             # Code for ESP32-CAM to capture and send images
@@ -69,10 +68,6 @@ AI Pin for the Blind is a wearable solution designed to assist visually impaired
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Acknowledgments
 
